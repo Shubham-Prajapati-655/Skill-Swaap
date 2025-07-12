@@ -1,21 +1,28 @@
 {
-  "name": "skill-swap-platform",
+  "name": "skill-swaap",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "Skill Swap Platform - Odoo Hackathon '25\r Project Overview\r This repository contains the implementation of Problem Statement 1: Skill Swap Platform for the Odoo Hackathon '25. The Skill Swap Platform is a mini-application that enables users to list their skills, request skills from others, and facilitate skill exchanges. The platform promotes collaborative learning and skill-sharing within a community.\r Problem Statement\r Skill Swap PlatformOverview: Develop a web-based platform where users can list skills they offer, specify skills they want to learn, and swap skills with others.\r Key Features:",
+  "main": "index.html",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shubham-Prajapati-655/Skill-Swaap.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Shubham-Prajapati-655/Skill-Swaap/issues"
+  },
+  "homepage": "https://github.com/Shubham-Prajapati-655/Skill-Swaap#readme",
   "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^17.2.0",
-    "express": "^5.1.0",
-    "mongoose": "^8.16.3"
+    "react-scripts": "^5.0.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"

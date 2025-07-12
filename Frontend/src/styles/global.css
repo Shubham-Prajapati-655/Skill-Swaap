@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #FFFFFF;
+}
+
+h1, h2, h3 {
+  color: #333333;
+}
+
+a {
+  text-decoration: none;
+}
