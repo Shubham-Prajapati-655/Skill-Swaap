@@ -299,7 +299,6 @@ if (fs.existsSync(distPath)) {
 export default app;
 
 // Start server only when run directly (not imported by Vercel)
-const isVercel = process.env.VERCEL === '1';
 if (!isVercel) {
   app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server running on http://localhost:${PORT}`);
