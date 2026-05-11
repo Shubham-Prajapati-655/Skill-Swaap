@@ -14,15 +14,35 @@ app.use(cors());
 app.use(express.json());
 
 const DB_FILE = path.join(__dirname, 'data.json');
+const isVercel = process.env.VERCEL === '1';
+
+// In-memory store for serverless (Vercel has read-only filesystem)
+let memoryDB = null;
+
+const getInitialData = () => {
+  try {
+    const data = fs.readFileSync(DB_FILE, 'utf8');
+    return JSON.parse(data);
+  } catch {
+    return { users: [], skills: [] };
+  }
+};
 
 // Helper function to read from DB
 const readDB = () => {
-  const data = fs.readFileSync(DB_FILE, 'utf8');
-  return JSON.parse(data);
+  if (isVercel) {
+    if (!memoryDB) memoryDB = getInitialData();
+    return memoryDB;
+  }
+  return getInitialData();
 };
 
 // Helper function to write to DB
 const writeDB = (data) => {
+  if (isVercel) {
+    memoryDB = data; // In-memory only on Vercel
+    return;
+  }
   fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), 'utf8');
 };
 
@@ -268,13 +288,21 @@ const distPath = path.join(__dirname, '..', 'dist');
 if (fs.existsSync(distPath)) {
   app.use(express.static(distPath));
   // Catch-all route for React Router (must be LAST)
-  app.get('*', (req, res) => {
+  // Express 5 requires named wildcard params instead of bare '*'
+  app.get('/{*splat}', (req, res) => {
     res.sendFile(path.join(distPath, 'index.html'));
   });
   console.log('Serving frontend from dist/');
 }
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-  console.log(`Dashboard: http://localhost:${PORT}/dashboard`);
-});
+// Export for Vercel serverless
+export default app;
+
+// Start server only when run directly (not imported by Vercel)
+const isVercel = process.env.VERCEL === '1';
+if (!isVercel) {
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Dashboard: http://localhost:${PORT}/dashboard`);
+  });
+}
