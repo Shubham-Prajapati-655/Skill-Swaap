@@ -1,0 +1,116 @@
+.add-container {
+  padding-top: 120px;
+  padding-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+}
+
+.add-card {
+  width: 100%;
+  max-width: 600px;
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+}
+
+.add-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.icon-wrapper {
+  width: 64px;
+  height: 64px;
+  background: var(--primary-glow);
+  color: var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 0 20px var(--primary-glow);
+}
+
+.add-header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.add-header p {
+  color: var(--text-secondary);
+}
+
+.add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.type-toggle {
+  display: flex;
+  gap: 1rem;
+}
+
+.type-toggle .btn {
+  flex: 1;
+}
+
+.type-toggle .btn:not(.active) {
+  opacity: 0.6;
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  font-size: 1rem;
+  transition: var(--transition);
+  outline: none;
+}
+
+.glass-input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 10px rgba(0, 245, 212, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.glass-input::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+select.glass-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+}
+
+.glass-input option {
+  background: var(--bg-color);
+  color: var(--text-primary);
+}
+
+.btn-submit {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.1rem;
+}

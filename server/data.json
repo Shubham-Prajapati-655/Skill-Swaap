@@ -1,0 +1,35 @@
+{
+  "users": [],
+  "skills": [
+    {
+      "id": "1",
+      "title": "Advanced React patterns",
+      "category": "Development",
+      "user": "Alex D.",
+      "userId": "system",
+      "type": "offering",
+      "color": "var(--accent-color)",
+      "glow": "var(--accent-glow)"
+    },
+    {
+      "id": "2",
+      "title": "UX Research Methods",
+      "category": "Design",
+      "user": "Sarah W.",
+      "userId": "system",
+      "type": "looking",
+      "color": "var(--secondary-color)",
+      "glow": "var(--secondary-glow)"
+    },
+    {
+      "id": "3",
+      "title": "Technical Writing",
+      "category": "Content",
+      "user": "Mike R.",
+      "userId": "system",
+      "type": "offering",
+      "color": "var(--primary-color)",
+      "glow": "var(--primary-glow)"
+    }
+  ]
+}

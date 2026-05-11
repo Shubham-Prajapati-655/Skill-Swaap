@@ -1,0 +1,113 @@
+.auth-container {
+  min-height: 100vh;
+  padding-top: 80px; /* Account for navbar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-wrapper {
+  width: 100%;
+  max-width: 450px;
+  padding: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.auth-card {
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(123, 44, 191, 0.3);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.auth-header p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.auth-error {
+  background: rgba(247, 37, 133, 0.1);
+  border: 1px solid var(--secondary-color);
+  color: #ffb3c6;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  pointer-events: none;
+}
+
+.glass-input.with-icon {
+  width: 100%;
+  padding-left: 3rem;
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+.auth-footer {
+  margin-top: 2rem;
+  text-align: center;
+  border-top: 1px solid var(--glass-border);
+  padding-top: 1.5rem;
+}
+
+.auth-footer p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.text-btn {
+  background: none;
+  border: none;
+  color: var(--accent-color);
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 0.25rem;
+  transition: var(--transition);
+}
+
+.text-btn:hover {
+  color: var(--primary-color);
+  text-shadow: 0 0 10px var(--primary-glow);
+}
